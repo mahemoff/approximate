@@ -1,0 +1,14 @@
+<script src='jquery.js'></script>
+<script src='../lib/approximate.js'></script>
+<script>
+  $(function() {
+    $('#inp').keyup(function() {
+      $('#out').html(approximate(this.value));
+    });
+    $('#inp').keyup();
+  });
+</script>
+
+<h2>Type a number to format it</h2>
+<input value='1222343' id='inp'></input>
+<p id='out'></p >

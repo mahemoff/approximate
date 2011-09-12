@@ -1,0 +1,24 @@
+Small library to format numbers approximately ("7.5K", "280M", etc.)
+
+Test specimens:
+7 ==> '7'
+800 ==> '800'
+1000 ==> '1K'
+1200 ==> '1.2K'
+87821 ==> '88K'
+412011 ==> '412K'
+999949 ==> '999K'
+999950 ==> '1M'
+1000000 ==> '1M'
+6123922 ==> '6.1M'
+27969374 ==> '28M'
+28001341 ==> '28M'
+28061341 ==> '28M'
+812192442 ==> '812M'
+999949999 ==> '999M'
+999950000 ==> '1B'
+1000000000 ==> '1B'
+
+Notes:
+- Supports negative values too
+- Won't format to sub-integer values for now (0.4 becomes "0", 0.8 becomes "1")
