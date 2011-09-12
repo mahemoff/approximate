@@ -1,11 +1,11 @@
-approximate = (num) ->
+approximate = (num, thousand = 'K', million = 'M', billion = 'B') ->
   num = parseInt(num);
   if Math.abs(num) >=999950000
-    format num, 1000000000, 'B'
+    format num, 1000000000, billion
   else if Math.abs(num) >=999950
-    format num, 1000000, 'M'
+    format num, 1000000, million
   else if Math.abs(num) >= 1000
-    format num, 1000, 'K'
+    format num, 1000, thousand
   else
     num+''
 
