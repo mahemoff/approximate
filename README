@@ -21,4 +21,5 @@ Test specimens:
 
 Notes:
 - Supports negative values too
+- Now with options for unit names (e.g. instead of "B", could use "G" or "&nbsp;billion")
 - Won't format to sub-integer values for now (0.4 becomes "0", 0.8 becomes "1")
