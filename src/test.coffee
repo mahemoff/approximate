@@ -1,8 +1,18 @@
+# Will add a real test suite when needed
+
+errors = []
+
 test = (input, expected, options = {}) ->
   m = "#{input} "
   result = approximate input, options
-  m+= if expected==result then 'ok' else "expected #{expected}, got #{result}"
+  if expected==result
+    m+='ok'
+  else
+    errors.push (m+="expected #{expected}, got #{result}")
   console.log m
+
+done = () ->
+  console.log '\n' + (if errors.length then "ERRORS:\n#{errors.join('\n')}" else "SUCCESS!")
 
 approximate = require './approximate'
 test 7,'7'
@@ -76,3 +86,5 @@ test -8, '-8', metrics
 test -5000, '-5K', metrics
 test -999949999, '-999M', metrics
 test -999950000, '-1G', metrics
+
+done()
