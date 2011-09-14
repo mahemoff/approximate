@@ -1,14 +1,10 @@
+merge = (a,b) ->
+  a[key] = val for key,val of b if b
+  a
+
 approximate = (num, options = {}) ->
 
-  units = { 'thousand' : 'K', 'million' : 'M', 'billion' : 'B'} 
-
-  if options['units']?
-    if options['units']['billion']?
-      units['billion'] = options['units']['billion']
-    if options['units']['million']?
-      units['million'] = options['units']['million']
-    if options['units']['thousand']?
-      units['thousand'] = options['units']['thousand']
+  units = merge { thousand: 'K', million: 'M', billion: 'B'}, options.units
 
   num = parseInt(num);
   if Math.abs(num) >=999950000
