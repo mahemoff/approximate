@@ -1,4 +1,4 @@
-Small library to format numbers approximately ("7.5K", "280M", etc.)
+Small JavaScript library to format numbers approximately ("7.5K", "280M", etc.)
 
 Test specimens:
 7 ==> '7'
